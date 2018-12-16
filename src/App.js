@@ -6,7 +6,8 @@ class App extends Component {
     super()
     this.state = {
       cheese: "ham",
-      dataFromChild: "no data from child yet"
+      dataFromChild: "no data from child yet",
+      colorData: ""
     }
 
     this.getDataFromChild = this.getDataFromChild.bind(this);
