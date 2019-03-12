@@ -7,17 +7,18 @@ import {
 function setDataFromChild(state = [], action) {
   switch (action.type) {
     case SEND_DATA_TO_PARENT:
+      console.log("switching to SEND_DATA_TO_PARENT in reducer")
       return [
         ...state,
         {
-          dataFromChild: action.data
+          dataFromChild: action.dataObjectFromChild
         }
       ]
     case CHANGE_BACKGROUND_COLOR:
       return [
         ...state,
         {
-          color: action.colorData
+          color: action.colorDataObjectFromChild
         }
       ]
     default:

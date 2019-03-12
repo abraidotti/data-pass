@@ -10,16 +10,16 @@ class Form extends React.Component {
  }
 
  componentDidMount(){
-   console.log(this.props)
+   console.log("on Form mount, props: ", this.props)
  }
 
  handleChange(event) {
-   console.log("setting state on change: " + event.target.value)
+   console.log("setting state on change: ", event.target.value)
    this.setState({ value: event.target.value});
  }
 
  handleSubmit(event) {
-   console.log('state on submit: ' + this.state.value);
+   console.log("state on submit: ", this.state.value);
    this.props.sendDataUp(this.state.value);
    event.preventDefault();
  }

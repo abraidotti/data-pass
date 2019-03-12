@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 import { createStore } from 'redux'
 
 const store = createStore(dataPassApp)
+console.log("store from index", store)
 
 ReactDOM.render(
   <Provider store={store}>

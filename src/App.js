@@ -1,6 +1,21 @@
 import React, { Component } from 'react';
 import Form from './components/Form';
 
+import { connect } from "react-redux";
+import { sendDataToParent, changeBackgroundColor } from "./actions";
+
+const mapStateToProps = (state /*, ownProps*/) => {
+  return {
+    dataFromChild: state.dataObjectFromChild,
+    colorData: state.colorDataObjectFromChild
+  };
+};
+
+const mapDispatchToProps = dispatch => ({
+  sendDataToParent: (data) =>
+    dispatch(sendDataToParent(data))
+  });
+
 class App extends Component {
   constructor() {
     super()
@@ -19,6 +34,8 @@ class App extends Component {
   }
 
   render() {
+
+    this.props.sendDataToParent("data sent to parent via props")
     return (
       <>
         <p>{this.state.cheese}</p>
@@ -33,4 +50,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
